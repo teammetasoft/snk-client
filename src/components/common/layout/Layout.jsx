@@ -10,19 +10,18 @@ export default function Layout() {
 
     return (
        
-
         <div className="flex h-screen overflow-hidden">
             {/* Sidebar */}
-            <Sidebar mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} />
+            <Sidebar  />
 
             {/* Main content */}
-            <div className="flex flex-col flex-1 overflow-hidden">
+            <div className="flex  flex-col flex-1 overflow-hidden">
                 {/* Topbar */}
                 <div className="sticky top-0 z-20 bg-white shadow px-4 h-16 flex items-center justify-between">
                     {/* Mobile menu toggle */}
                     <button
-                        className="md:hidden text-xl"
-                        onClick={() => setMobileOpen(!mobileOpen)}
+                        className=" text-xl"
+                        // onClick={() => setMobileOpen(!mobileOpen)}
                     >
                         <FaBars />
                     </button>
