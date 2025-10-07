@@ -88,7 +88,7 @@ function Sidebar({ mobileOpen, setIsMobileOpen }) {
       {/* Header */}
       <div className="p-6 border-b border-gray-200 flex items-center justify-between">
         {!isCollapsed && (
-          <h1 className="text-xl font-bold text-gray-800">S.N.K. Jewellers</h1>
+          <h1 className="text-xl font-bold text-black">S.N.K. Jewellers</h1>
         )}
         <button
           onClick={() => setIsCollapsed(!isCollapsed)}
@@ -124,7 +124,7 @@ function Sidebar({ mobileOpen, setIsMobileOpen }) {
                 {!isCollapsed && (
                   <span
                     className={`ml-3 text-sm  ${
-                      currentPath === item.path ? 'text-primary font-bold' : 'text-gray-600 font-medium'
+                      currentPath === item.path ? 'text-primary font-bold' : 'text-darkGray font-medium'
                     }`}
                   >
                     {item.label}
@@ -160,7 +160,7 @@ function Sidebar({ mobileOpen, setIsMobileOpen }) {
                       />
                       <span
                         className={`ml-3 text-sm ${
-                          currentPath === child.path ? 'text-primary font-bold' : 'text-gray-600'
+                          currentPath === child.path ? 'text-primary font-bold' : 'text-darkGray'
                         }`}
                       >
                         {child.label}
@@ -196,7 +196,7 @@ function Sidebar({ mobileOpen, setIsMobileOpen }) {
           {!isCollapsed && (
             <span
               className={`ml-3 text-sm font-medium ${
-                currentPath === bottomMenuItem.path ? 'text-blue-500' : 'text-gray-600'
+                currentPath === bottomMenuItem.path ? 'text-primary' : 'text-darkGray'
               }`}
             >
               {bottomMenuItem.label}

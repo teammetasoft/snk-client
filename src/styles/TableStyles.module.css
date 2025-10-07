@@ -1,0 +1,18 @@
+.tableRowLight {
+  background-color: #fafafa;
+}
+
+.tableRowDark {
+  background-color: #ffffff;
+}
+
+/* Use :global for antd class overrides */
+:global(.ant-table-thead > tr > th) {
+  background-color: #f0f0f0 !important;
+  color: #333 !important;
+  font-weight: 600 !important;
+}
+
+:global(.ant-table-tbody > tr:hover > td) {
+  background-color: #e6f7ff !important;
+}

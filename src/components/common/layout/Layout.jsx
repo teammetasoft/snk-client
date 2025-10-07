@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import Sidebar from "../Sidebar";
 import Topbar from "../Topbar";
+import Navbar from "../navbar/Navbar";
 
 export default function Layout() {
 
@@ -17,19 +18,12 @@ export default function Layout() {
             {/* Main content */}
             <div className="flex  flex-col flex-1 overflow-hidden">
                 {/* Topbar */}
-                <div className="sticky top-0 z-20 bg-white shadow px-4 h-16 flex items-center justify-between">
-                    {/* Mobile menu toggle */}
-                    <button
-                        className=" text-xl"
-                        // onClick={() => setMobileOpen(!mobileOpen)}
-                    >
-                        <FaBars />
-                    </button>
-                    <Topbar />
+                <div className="">
+                    <Navbar />
                 </div>
 
                 {/* Page Content */}
-                <div className="flex-1 overflow-y-auto bg-gray-50 p-4">
+                <div className="flex-1 overflow-y-auto bg-gray-50 ">
                     <Outlet />
                 </div>
             </div>

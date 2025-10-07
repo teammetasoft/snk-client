@@ -11,6 +11,9 @@ export default {
       },
       colors: {
         primary: "#1890FF", 
+        lightGray: "#777777",
+        darkGray: "#444444",
+        copyrightGray:"#777777"
       },
     },
   },

@@ -21,7 +21,7 @@ function App() {
         <Routes>
           {/* <Route element={<LoginRouteProtect />}> */}
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/password-forget" element={<ForgetPasswordPage />} />
+          <Route path="/forgot-password" element={<ForgetPasswordPage />} />
             <Route path="/otp-validate" element={<OtpValidatePage />} />
             <Route path="/password-reset" element={<ResetPasswordPage />} />
           {/* </Route> */}
