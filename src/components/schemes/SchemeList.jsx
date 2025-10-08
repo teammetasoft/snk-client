@@ -1,26 +1,37 @@
 import React, { useState } from "react";
 import { Table, Pagination } from "antd";
-import PageHeader from "../common/PageHeader";
-import TabNavigation from "../common/TabNavigation";
+import PageHeader from "../common/header/PageHeader";
+import SchemeTabNavigation from "./SchemeTabNavigation";
 import mockSchemeData from "../../utils/mockData/SchemeMockData";
 import schemeColumn from "../../utils/tableColumns/schemeColumn";
 import styles from '../../styles/TableStyles.module.css';
+import { useNavigate } from 'react-router-dom'
 
 function SchemeList() {
   const [activeTab, setActiveTab] = useState("active");
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
+  const navigate = useNavigate();
 
   // Filter data based on active tab
   const filteredData = mockSchemeData.filter(
     (scheme) => scheme.status === activeTab
   );
 
+  const handleAddButton = () => {
+    navigate('/scheme-create')
+  }
+
   const handlePageChange = (page, size) => {
     setCurrentPage(page);
     setPageSize(size);
   };
+
+  const paginatedData = filteredData.slice(
+    (currentPage - 1) * pageSize,
+    currentPage * pageSize
+  );
 
   const totalItems = filteredData.length;
 
@@ -30,16 +41,17 @@ function SchemeList() {
         title="Manage Schemes"
         desc="Manage and track all schemes in one place"
         addBtn="Add Scheme"
+        handleAddButton={handleAddButton}
       />
 
       <div className="px-5">
-        <TabNavigation activeTab={activeTab} onChange={setActiveTab} />
+        <SchemeTabNavigation activeTab={activeTab} onChange={setActiveTab} />
 
         {/* Table */}
         <div className="overflow-x-auto">
           <Table
             columns={schemeColumn}
-            dataSource={filteredData}
+            dataSource={paginatedData}
             loading={loading}
             pagination={false}
             className="bg-white rounded-lg"
@@ -53,7 +65,8 @@ function SchemeList() {
         {/* Pagination */}
         <div className="mt-6 flex items-center justify-between p-4 bg-white rounded-lg">
           <span className="text-gray-600">
-            Showing {totalItems} of {totalItems} schemes
+            Showing {(currentPage - 1) * pageSize + 1}–
+            {Math.min(currentPage * pageSize, totalItems)} of {totalItems} schemes
           </span>
           <Pagination
             current={currentPage}

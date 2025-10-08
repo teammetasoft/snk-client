@@ -97,7 +97,7 @@ const mockSchemeData = [
     amountRange: "30000 to 500000",
     activeUsers: 7050,
     dateAdded: "01-01-2025",
-    status: "active"
+    status: "drafts"
   },
     {
     key: "11",
@@ -107,7 +107,7 @@ const mockSchemeData = [
     amountRange: "30000 to 500000",
     activeUsers: 7050,
     dateAdded: "01-01-2025",
-    status: "active"
+    status: "closed"
   },
 
 ];

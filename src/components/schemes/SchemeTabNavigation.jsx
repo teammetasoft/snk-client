@@ -4,7 +4,7 @@ import { DownOutlined, ReloadOutlined, SettingOutlined, SearchOutlined, FilterOu
 const { Search } = Input;
 
 // Tab Navigation Component with Filters
-const TabNavigation = ({ activeTab, onChange }) => {
+const SchemeTabNavigation = ({ activeTab, onChange }) => {
     const [searchValue, setSearchValue] = useState("");
     const [selectedInvestors, setSelectedInvestors] = useState(null);
     const [selectedOverdue, setSelectedOverdue] = useState(null);
@@ -178,4 +178,4 @@ const TabNavigation = ({ activeTab, onChange }) => {
     );
 };
 
-export default TabNavigation;
+export default SchemeTabNavigation;
