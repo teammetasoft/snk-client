@@ -2,7 +2,40 @@ import { Button, Tag, Dropdown } from "antd";
 import { FiMoreVertical, FiEdit, FiEye, FiTrash2 } from "react-icons/fi";
 
 
-const schemeColumn = [
+const schemeColumn = (selectedRows, setSelectedRows, data) => [
+    {
+        title: (
+            <input
+                type="checkbox"
+                className="w-4 h-4 cursor-pointer"
+                checked={selectedRows.length === data.length && data.length > 0}
+                onChange={(e) => {
+                    if (e.target.checked) {
+                        setSelectedRows(data.map(item => item.key));
+                    } else {
+                        setSelectedRows([]);
+                    }
+                }}
+            />
+        ),
+        dataIndex: "checkbox",
+        key: "checkbox",
+        width: 50,
+        render: (_, record) => (
+            <input
+                type="checkbox"
+                className="w-4 h-4 cursor-pointer"
+                checked={selectedRows.includes(record.key)}
+                onChange={(e) => {
+                    if (e.target.checked) {
+                        setSelectedRows([...selectedRows, record.key]);
+                    } else {
+                        setSelectedRows(selectedRows.filter(key => key !== record.key));
+                    }
+                }}
+            />
+        )
+    },
     {
         title: "Scheme Name",
         dataIndex: "schemeName",
@@ -88,4 +121,5 @@ const schemeColumn = [
         }
     }
 ];
-export default schemeColumn
+
+export default schemeColumn;

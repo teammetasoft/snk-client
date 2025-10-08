@@ -109,6 +109,46 @@ const mockSchemeData = [
     dateAdded: "01-01-2025",
     status: "closed"
   },
+  {
+    key: "12",
+    schemeName: "HERITAGE SAVINGS  SAVINGSdfsfsafsad PLAN",
+    systemName: "VIP",
+    installmentPlans: ["VIP 30000"],
+    amountRange: "30000 to 500000",
+    activeUsers: 7050,
+    dateAdded: "01-01-2025",
+    status: "active"
+  },
+  {
+    key: "13",
+    schemeName: "HERITAGE SAVINGS  SAVINGSdfsfsafsad PLAN",
+    systemName: "VIP",
+    installmentPlans: ["VIP 30000"],
+    amountRange: "30000 to 500000",
+    activeUsers: 7050,
+    dateAdded: "01-01-2025",
+    status: "active"
+  },
+  {
+    key: "14",
+    schemeName: "HERITAGE SAVINGS  SAVINGSdfsfsafsad PLAN",
+    systemName: "VIP",
+    installmentPlans: ["VIP 30000"],
+    amountRange: "30000 to 500000",
+    activeUsers: 7050,
+    dateAdded: "01-01-2025",
+    status: "active"
+  },
+  {
+    key: "15",
+    schemeName: "HERITAGE SAVINGS  SAVINGSdfsfsafsad PLAN",
+    systemName: "VIP",
+    installmentPlans: ["VIP 30000"],
+    amountRange: "30000 to 500000",
+    activeUsers: 7050,
+    dateAdded: "01-01-2025",
+    status: "active"
+  },
 
 ];
 export default mockSchemeData;

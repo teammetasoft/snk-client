@@ -1,16 +1,16 @@
-import React from 'react';
+
 import GoldImage from '../../assets/gold.svg';
 
 
 export default function SchemeDetailsForm() {
   return (
-    <div className="p-4 md:p-5 rounded-lg  ">
-      <h2 className="text-black text-xl md:text-2xl font-semibold mb-4 md:mb-6">Scheme details</h2>
+    <div className="p-4 md:p-5 rounded-lg border  ">
+      <h2 className="text-darkGray text-xl  font-semibold mb-4 md:mb-6">Scheme details</h2>
 
       <div className="flex flex-col lg:flex-row gap-4 md:gap-6">
         {/* Image Upload Section */}
         <div className="w-full lg:w-1/3">
-          <div className="bg-gray-100 rounded-lg overflow-hidden h-48 md:h-full flex items-center justify-center">
+          <div className=" rounded-lg overflow-hidden h-48 md:h-full flex items-center justify-center">
             <img src={GoldImage} alt="Gold" className="h-full object-cover" />
 
             {/* <svg className="w-12 h-12 md:w-16 md:h-16 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">

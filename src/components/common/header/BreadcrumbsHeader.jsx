@@ -10,11 +10,15 @@ const BreadcrumbsHeader = ({ title, desc, btnName, parentLink, parentName, child
                 <div className="space-y-0.5">
                     <div>
                         <Breadcrumb
-                            seperator="/"
+                            separator="/"
                             items={[
-                                { title: (<Link to={parentLink}><span className="text-sm text-lightGray">{parentName}</span></Link>) },
-                                { title: (<span className="text-sm text-darkGray">{childName}</span>) },
-
+                                {
+                                    title: <span className="text-sm text-lightGray">{parentName}</span>,
+                                    href: parentLink
+                                },
+                                {
+                                    title: <span className="text-sm text-darkGray ">{childName}</span>
+                                },
                             ]}
                         />
                     </div>

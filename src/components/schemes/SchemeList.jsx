@@ -12,6 +12,8 @@ function SchemeList() {
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
+  const [selectedRows, setSelectedRows] = useState([]);
+
   const navigate = useNavigate();
 
   // Filter data based on active tab
@@ -27,7 +29,10 @@ function SchemeList() {
     setCurrentPage(page);
     setPageSize(size);
   };
-
+  const handleTabChange=(tab)=>{
+    setActiveTab(tab);
+    setCurrentPage(1);
+  }
   const paginatedData = filteredData.slice(
     (currentPage - 1) * pageSize,
     currentPage * pageSize
@@ -45,12 +50,12 @@ function SchemeList() {
       />
 
       <div className="px-5">
-        <SchemeTabNavigation activeTab={activeTab} onChange={setActiveTab} />
+        <SchemeTabNavigation activeTab={activeTab} onChange={handleTabChange} />
 
         {/* Table */}
         <div className="overflow-x-auto">
           <Table
-            columns={schemeColumn}
+            columns={schemeColumn(selectedRows, setSelectedRows, paginatedData)}
             dataSource={paginatedData}
             loading={loading}
             pagination={false}
