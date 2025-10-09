@@ -51,7 +51,7 @@ function Sidebar({ mobileOpen, setIsMobileOpen }) {
       //   { id: 'transaction-list', label: 'Transaction List', icon: TransactionsIcon, activeIcon: TransactionsIconActive, path: '/transaction-list' }
       // ]
     },
-    { id: 'customers', label: 'Customers', icon: CustomersIcon, activeIcon: CustomersIconActive, path: '/customer-list',
+    { id: 'investors', label: 'Investors', icon: CustomersIcon, activeIcon: CustomersIconActive, path: '/investor-list',
       // children: [
       //   { id: 'customer-create', label: 'Create Customer', icon: CustomersIcon, activeIcon: CustomersIconActive, path: '/customer-create' },
       //   { id: 'customer-list', label: 'Customer List', icon: CustomersIcon, activeIcon: CustomersIconActive, path: '/customer-list' }

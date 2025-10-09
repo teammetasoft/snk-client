@@ -1,5 +1,5 @@
 
-import GoldImage from '../../assets/gold.svg';
+import GoldImage from "../../../assets/gold.svg"
 
 
 export default function SchemeDetailsForm() {

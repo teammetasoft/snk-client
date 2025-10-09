@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Table, Pagination } from "antd";
-import PageHeader from "../common/header/PageHeader";
+import PageHeader from "../../common/header/PageHeader";
 import SchemeTabNavigation from "./SchemeTabNavigation";
-import mockSchemeData from "../../utils/mockData/SchemeMockData";
-import schemeColumn from "../../utils/tableColumns/schemeColumn";
-import styles from '../../styles/TableStyles.module.css';
+import mockSchemeData from "../../../utils/mockData/SchemeMockData";
+import schemeColumn from "../../../utils/tableColumns/schemeColumn";
+import styles from '../../../styles/TableStyles.module.css';
 import { useNavigate } from 'react-router-dom'
 
 function SchemeList() {

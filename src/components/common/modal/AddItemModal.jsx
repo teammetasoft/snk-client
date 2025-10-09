@@ -70,10 +70,10 @@ export default function AddItemModal({ isModalOpen, handleCancel, handleOk, item
 
                 {/* Items List */}
                 <div className="mt-4">
-                    <h3 className="text-sm font-medium text-gray-700 mb-2">Current Items:</h3>
+                    <h3 className="text-sm font-medium text-darkGray mb-2">Current Items:</h3>
                     <div className="max-h-64 overflow-y-auto space-y-2">
                         {items.length === 0 ? (
-                            <p className="text-gray-400 text-sm text-center py-4">No items yet</p>
+                            <p className="text-lightGray text-sm text-center py-4">No items yet</p>
                         ) : (
                             items.map((item) => (
                                 <div

@@ -2,14 +2,14 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LoginPage from "./pages/auth/LoginPage";
 import Layout from "./components/common/layout/Layout";
-import CreateCustomerPage from "./pages/customer/CreateCustomerPage";
-import CustomerListPage from "./pages/customer/CustomerListPage";
+import CreateInvestorPage from "./pages/investor/CreateInvestorPage";
+import InvestorListPage from "./pages/investor/InvestorListPage";
 import CreateProductPage from "./pages/product/CreateProductPage";
 import ProductListPage from "./pages/product/ProductListPage";
 import SchemeListPage from "./pages/schemes/SchemeListPage";
 import CreateSchemesPage from "./pages/schemes/CreateSchemesPage";
 import CreateTransactionPage from "./pages/transaction/CreateTransactionPage";
-import TransactionList from "./components/transaction/TransactionList";
+import TransactionList from "./components/transaction/transactionList/TransactionList";
 import ResetPasswordPage from "./pages/auth/ResetPasswordPage";
 import OtpValidatePage from "./pages/auth/OtpValidatePage";
 import ForgetPasswordPage from "./pages/auth/ForgetPasswordPage";
@@ -35,8 +35,8 @@ function App() {
           >
             {/* <Route index element={<div>Dashboard Page</div>} /> */}
             <Route path="/dashboard" element={<div>Dashboard Page</div>} />
-            <Route path="/customer-create" element={<CreateCustomerPage />} />
-            <Route path="/customer-list" element={<CustomerListPage />} />
+            <Route path="/investor-create" element={<CreateInvestorPage />} />
+            <Route path="/investor-list" element={<InvestorListPage />} />
             <Route path="/product-create" element={<CreateProductPage />} />
             <Route path="/product-list" element={<ProductListPage />} />
             <Route path="/scheme-create" element={<CreateSchemesPage />} />

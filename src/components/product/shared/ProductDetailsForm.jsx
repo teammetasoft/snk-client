@@ -2,7 +2,7 @@ import { AiOutlinePlus } from 'react-icons/ai';
 import { useState, useEffect } from 'react';
 import { Image, Upload, Button } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
-import AddItemModal from '../common/modal/AddItemModal';
+import AddItemModal from '../../common/modal/AddItemModal';
 
 // Mock Data
 const JewelleryItems = [

@@ -1,5 +1,5 @@
 import React from 'react'
-import CreateSchemes from '../../components/schemes/CreateSchemes'
+import CreateSchemes from '../../components/schemes/create/CreateSchemes'
 
 function CreateSchemesPage() {
   return (

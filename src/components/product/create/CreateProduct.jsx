@@ -1,5 +1,5 @@
-import BreadcrumbsHeader from "../common/header/BreadcrumbsHeader"
-import ProductDetailsForm from "./ProductDetailsForm"
+import BreadcrumbsHeader from "../../common/header/BreadcrumbsHeader"
+import ProductDetailsForm from "../shared/ProductDetailsForm"
 
 
 

@@ -1,6 +1,6 @@
 
-import BreadcrumbsHeader from "../common/header/BreadcrumbsHeader"
-import SchemeDetailsForm from "./SchemeDetailsForm"
+import BreadcrumbsHeader from "../../common/header/BreadcrumbsHeader"
+import SchemeDetailsForm from "../shared/SchemeDetailsForm"
 
 function CreateSchemes() {
   return (
