@@ -27,10 +27,10 @@ function TransactionList() {
   ];
 
   const paymentModes = [
-    { id: 1, name: 'Cash' },
-    { id: 2, name: 'UPI' },
-    { id: 3, name: 'Bank Transfer' },
-    { id: 4, name: 'Card' }
+    { id: 1, name: 'In-store Cash' },
+    { id: 2, name: 'In-store UPI' },
+    // { id: 3, name: 'Bank Transfer' },
+    // { id: 4, name: 'Card' }
   ];
 
   const handleAddButton = () => {
@@ -41,7 +41,7 @@ function TransactionList() {
     setIsModalOpen(false);
     // Reset form data when closing
     setFormData({
-      customerName: '',
+      InvestorName: '',
       schemeName: '',
       installmentAmount: '',
       paymentMode: ''
@@ -57,7 +57,7 @@ function TransactionList() {
 
     // Reset form data
     setFormData({
-      customerName: '',
+      InvestorName: '',
       schemeName: '',
       installmentAmount: '',
       paymentMode: ''

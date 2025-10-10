@@ -10,13 +10,13 @@ export default function Layout() {
     const [mobileOpen, setMobileOpen] = useState(false);
 
     return (
-       
-        <div className="flex h-screen overflow-hidden">
+
+        <div className="flex h-screen ">
             {/* Sidebar */}
-            <Sidebar  />
+            <Sidebar />
 
             {/* Main content */}
-            <div className="flex  flex-col flex-1 overflow-hidden">
+            <div className="flex  flex-col flex-1 overflow-hidden relative">
                 {/* Topbar */}
                 <div className="">
                     <Navbar />
