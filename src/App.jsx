@@ -13,6 +13,8 @@ import TransactionList from "./components/transaction/transactionList/Transactio
 import ResetPasswordPage from "./pages/auth/ResetPasswordPage";
 import OtpValidatePage from "./pages/auth/OtpValidatePage";
 import ForgetPasswordPage from "./pages/auth/ForgetPasswordPage";
+import SettingsPage from "./pages/SettingsPage"
+import ContactPage from "./pages/ContactPage"
 
 function App() {
   return (
@@ -45,7 +47,17 @@ function App() {
               path="/transaction-create"
               element={<CreateTransactionPage />}
             />
+            <Route
+              path="/about"
+              element={<CreateTransactionPage />}
+            />
+             <Route
+              path="/contact"
+              element={<ContactPage />}
+            />
             <Route path="/transaction-list" element={<TransactionList />} />
+            <Route path="/settings" element={<SettingsPage />} />
+
           </Route>
         </Routes>
       </BrowserRouter>

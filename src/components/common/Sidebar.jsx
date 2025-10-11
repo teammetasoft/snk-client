@@ -69,24 +69,26 @@ function Sidebar({ mobileOpen, setIsMobileOpen }) {
   };
 
   const MenuItem = ({ item, isBottom = false }) => {
+
+
     const content = (
       <Link
         to={item.path}
         className={`relative flex items-center ${isCollapsed ? 'justify-center' : 'justify-start'
-          } px-3 py-3 rounded-lg cursor-pointer transition-colors ${currentPath === item.path
-            ? 'bg-blue-50'
+          } px-3 py-3 rounded-lg cursor-pointer transition-colors ${currentPath === item.path || (item.children && item.children.some(child => child.path === currentPath))
+            ? ''
             : 'hover:bg-gray-50'
           }`}
         onClick={() => handleMenuClick(item.id)}
       >
         <img
-          src={currentPath === item.path ? item.activeIcon : item.icon}
+          src={currentPath === item.path || (item.children && item.children.some(child => child.path === currentPath)) ? item.activeIcon : item.icon}
           alt={item.label}
           className="w-5 h-5"
         />
         {!isCollapsed && (
           <span
-            className={`ml-3 text-sm ${currentPath === item.path ? 'text-primary font-bold' : 'text-darkGray font-medium'
+            className={`ml-3 text-sm ${currentPath === item.path || (item.children && item.children.some(child => child.path === currentPath)) ? 'text-primary font-bold' : 'text-darkGray font-medium'
               }`}
           >
             {item.label}
@@ -101,7 +103,6 @@ function Sidebar({ mobileOpen, setIsMobileOpen }) {
           title={item.label}
           placement="right"
           color="#1890FF" // Tailwind's blue-800 for example
-          overlayInnerStyle={{ color: 'white', fontWeight: 500 }}
         >
           {content}
         </Tooltip>
@@ -136,32 +137,63 @@ function Sidebar({ mobileOpen, setIsMobileOpen }) {
             <div key={item.id}>
               <MenuItem item={item} />
 
-              {/* CMS Children */}
-              {item.children && !isCollapsed && cmsExpanded && (
-                <div className="ml-4 mt-1 space-y-1">
-                  {item.children.map((child) => (
-                    <Link
-                      key={child.id}
-                      to={child.path}
-                      className={`relative flex items-center px-3 py-2 rounded-lg cursor-pointer transition-colors ${currentPath === child.path
-                        ? 'bg-blue-50'
-                        : 'hover:bg-gray-50'
-                        }`}
-                    >
-                      <img
-                        src={currentPath === child.path ? child.activeIcon : child.icon}
-                        alt={child.label}
-                        className="w-5 h-5"
-                      />
-                      <span
-                        className={`ml-3 text-sm ${currentPath === child.path ? 'text-primary font-bold' : 'text-darkGray'
-                          }`}
-                      >
-                        {child.label}
-                      </span>
-                    </Link>
-                  ))}
-                </div>
+             
+              {item.children && (
+                <>
+                  {!isCollapsed && cmsExpanded && (
+                    <div className="ml-4 mt-1 space-y-1">
+                      {item.children.map((child) => (
+                        <Link
+                          key={child.id}
+                          to={child.path}
+                          className={`relative flex items-center px-3 py-2 rounded-lg cursor-pointer transition-colors ${currentPath === child.path
+                            ? 'bg-blue-50'
+                            : 'hover:bg-gray-50'
+                            }`}
+                        >
+                          <img
+                            src={currentPath === child.path ? child.activeIcon : child.icon}
+                            alt={child.label}
+                            className="w-5 h-5"
+                          />
+                          <span
+                            className={`ml-3 text-sm ${currentPath === child.path ? 'text-primary font-bold' : 'text-darkGray'
+                              }`}
+                          >
+                            {child.label}
+                          </span>
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+
+                  {isCollapsed && (
+                    <div className="space-y-1 mt-1">
+                      {item.children.map((child) => (
+                        <Tooltip
+                          key={child.id}
+                          title={child.label}
+                          placement="right"
+                          color="#1890FF"
+                        >
+                          <Link
+                            to={child.path}
+                            className={`relative flex items-center justify-center px-3 py-3 rounded-lg cursor-pointer transition-colors ${currentPath === child.path
+                              ? 'bg-blue-50'
+                              : 'hover:bg-gray-50'
+                              }`}
+                          >
+                            <img
+                              src={currentPath === child.path ? child.activeIcon : child.icon}
+                              alt={child.label}
+                              className="w-5 h-5"
+                            />
+                          </Link>
+                        </Tooltip>
+                      ))}
+                    </div>
+                  )}
+                </>
               )}
             </div>
           ))}
