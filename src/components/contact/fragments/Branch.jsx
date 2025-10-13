@@ -4,7 +4,7 @@ import { AiOutlineDelete } from "react-icons/ai";
 
 const { TextArea } = Input;
 
-function Branch({ branchName = "Head Office", onDelete = null, showDelete = false }) {
+function Branch({ branchName , onDelete = null, showDelete = false }) {
     const [formData, setFormData] = useState({
         email: '',
         phone: '',

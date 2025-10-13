@@ -9,12 +9,15 @@ import ProductListPage from "./pages/product/ProductListPage";
 import SchemeListPage from "./pages/schemes/SchemeListPage";
 import CreateSchemesPage from "./pages/schemes/CreateSchemesPage";
 import CreateTransactionPage from "./pages/transaction/CreateTransactionPage";
-import TransactionList from "./components/transaction/transactionList/TransactionList";
+import TransactionList from "./pages/transaction/TransactionListPage";
+import ViewInvestorPage from "./pages/investor/ViewInvestorPage"
+
 import ResetPasswordPage from "./pages/auth/ResetPasswordPage";
 import OtpValidatePage from "./pages/auth/OtpValidatePage";
 import ForgetPasswordPage from "./pages/auth/ForgetPasswordPage";
 import SettingsPage from "./pages/SettingsPage"
 import ContactPage from "./pages/ContactPage"
+ 
 
 function App() {
   return (
@@ -39,6 +42,9 @@ function App() {
             <Route path="/dashboard" element={<div>Dashboard Page</div>} />
             <Route path="/investor-create" element={<CreateInvestorPage />} />
             <Route path="/investor-list" element={<InvestorListPage />} />
+            <Route path="/investor-profile" element={<ViewInvestorPage />} />
+            
+
             <Route path="/product-create" element={<CreateProductPage />} />
             <Route path="/product-list" element={<ProductListPage />} />
             <Route path="/scheme-create" element={<CreateSchemesPage />} />

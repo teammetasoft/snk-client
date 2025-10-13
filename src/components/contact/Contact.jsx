@@ -37,10 +37,10 @@ function Contact() {
             // handleAddButton={handleAddButton}
             />
             <div className="px-5 grid grid-cols-1 md:grid-cols-2  gap-5 [&>*]:h-80 [&>*]:overflow-y-auto">
-                <Branch title="Head Office" />
+                <Branch branchName="Head Office" />
                 <SocialLinks />
                 {branch.map((item) => (
-                    <Branch key={item.id} title={item.branchName} showDelete={true} onDelete={() => handleOnDelete(item.id)} />
+                    <Branch key={item.id} branchName={item.branchName} showDelete={true} onDelete={() => handleOnDelete(item.id)} />
 
                 ))
                 }
