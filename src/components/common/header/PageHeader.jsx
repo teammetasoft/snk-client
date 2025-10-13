@@ -17,7 +17,7 @@ const PageHeader = ({ title, desc, addBtn, handleAddButton }) => {
                         {addBtn !== "Publish" && (
                             <button className='flex items-center gap-2 bg-white border border-gray-300 text-darkGray py-2.5 px-4 rounded-lg font-medium hover:bg-gray-50 transition-colors'>
                                 <AiOutlineDownload className='text-lg' />
-                                <span className='hidden sm:inline text-base'>Export to excel</span>
+                                <span className='  text-base'>Export to excel</span>
                             </button>
                         )}
 
@@ -28,8 +28,8 @@ const PageHeader = ({ title, desc, addBtn, handleAddButton }) => {
                         >
                             {/* Show plus icon only if not publishing */}
                             {addBtn !== "Publish" && <AiOutlinePlus className='text-lg' />}
-                            <span className='hidden sm:inline text-base'>{addBtn}</span>
-                        </button>
+                            <span className=' inline text-bas   e'>{addBtn}</span>
+                        </button>   
                     </div>
                 )}
 
