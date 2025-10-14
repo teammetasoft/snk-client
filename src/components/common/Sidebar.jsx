@@ -25,7 +25,7 @@ import AboutIcon from '../../assets/sidebar/about.svg';
 import ContactIcon from '../../assets/sidebar/contact.svg';
 import SettingsIcon from '../../assets/sidebar/settings.svg';
 
-function Sidebar({ mobileOpen, setIsMobileOpen }) {
+function Sidebar({ mobileOpen, isSidebarOpen, setIsSidebarOpen }) {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [cmsExpanded, setCmsExpanded] = useState(true);
   const location = useLocation();
@@ -68,9 +68,13 @@ function Sidebar({ mobileOpen, setIsMobileOpen }) {
     }
   };
 
+  const handleLinkClick = () => {
+    if (mobileOpen) {
+      setIsSidebarOpen(false);
+    }
+  };
+
   const MenuItem = ({ item, isBottom = false }) => {
-
-
     const content = (
       <Link
         to={item.path}
@@ -79,7 +83,10 @@ function Sidebar({ mobileOpen, setIsMobileOpen }) {
             ? ''
             : 'hover:bg-gray-50'
           }`}
-        onClick={() => handleMenuClick(item.id)}
+        onClick={() => {
+          handleMenuClick(item.id);
+          if (item.path) handleLinkClick();
+        }}
       >
         <img
           src={currentPath === item.path || (item.children && item.children.some(child => child.path === currentPath)) ? item.activeIcon : item.icon}
@@ -102,7 +109,7 @@ function Sidebar({ mobileOpen, setIsMobileOpen }) {
         <Tooltip
           title={item.label}
           placement="right"
-          color="#1890FF" // Tailwind's blue-800 for example
+          color="#1890FF"
         >
           {content}
         </Tooltip>
@@ -112,11 +119,13 @@ function Sidebar({ mobileOpen, setIsMobileOpen }) {
     return content;
   };
 
+
+  const sidebarClasses = mobileOpen
+    ? `fixed top-0 left-0 z-50 h-screen transition-transform duration-300 ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} ${isCollapsed ? 'w-20' : 'w-64'}`
+    : `${isCollapsed ? 'w-20' : 'w-64'}  transition-all duration-300`;
+
   return (
-    <div
-      className={`${isCollapsed ? 'w-20' : 'w-64'
-        } bg-white border-r border-gray-200 h-screen flex flex-col transition-all duration-300 relative`}
-    >
+    <div className={`${sidebarClasses} bg-white border-r border-gray-200 flex flex-col`}>
       {/* Header */}
       <div className={`px-6 ${isCollapsed ? "py-[29px]" : "py-6"} border-b border-gray-200 flex items-center justify-between`}>
         {!isCollapsed && (
@@ -137,7 +146,6 @@ function Sidebar({ mobileOpen, setIsMobileOpen }) {
             <div key={item.id}>
               <MenuItem item={item} />
 
-
               {item.children && (
                 <>
                   {!isCollapsed && cmsExpanded && (
@@ -150,6 +158,7 @@ function Sidebar({ mobileOpen, setIsMobileOpen }) {
                             ? 'bg-blue-50'
                             : 'hover:bg-gray-50'
                             }`}
+                          onClick={handleLinkClick}
                         >
                           <img
                             src={currentPath === child.path ? child.activeIcon : child.icon}
@@ -182,6 +191,7 @@ function Sidebar({ mobileOpen, setIsMobileOpen }) {
                               ? 'bg-blue-50'
                               : 'hover:bg-gray-50'
                               }`}
+                            onClick={handleLinkClick}
                           >
                             <img
                               src={currentPath === child.path ? child.activeIcon : child.icon}
