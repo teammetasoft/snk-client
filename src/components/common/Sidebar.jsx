@@ -118,7 +118,7 @@ function Sidebar({ mobileOpen, setIsMobileOpen }) {
         } bg-white border-r border-gray-200 h-screen flex flex-col transition-all duration-300 relative`}
     >
       {/* Header */}
-      <div className="p-6 border-b border-gray-200 flex items-center justify-between">
+      <div className={`px-6 ${isCollapsed ? "py-[29px]" : "py-6"} border-b border-gray-200 flex items-center justify-between`}>
         {!isCollapsed && (
           <h1 className="text-xl font-bold text-black">S.N.K. Jewellers</h1>
         )}
@@ -137,7 +137,7 @@ function Sidebar({ mobileOpen, setIsMobileOpen }) {
             <div key={item.id}>
               <MenuItem item={item} />
 
-             
+
               {item.children && (
                 <>
                   {!isCollapsed && cmsExpanded && (

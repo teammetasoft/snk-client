@@ -2,6 +2,7 @@
 import { AiOutlinePlus } from 'react-icons/ai';
 import { Breadcrumb } from 'antd'
 import { Link } from "react-router-dom"
+import { AiOutlineDelete } from "react-icons/ai";
 
 const BreadcrumbsHeader = ({ title, desc, btnName, parentLink, parentName, childName }) => {
     return (
@@ -28,19 +29,31 @@ const BreadcrumbsHeader = ({ title, desc, btnName, parentLink, parentName, child
                         <p className='text-sm text-lightGray'>{desc}</p>
                     </div>
                 </div>
-                <div className='flex items-center gap-3'>
-                    <button className='flex items-center gap-2 bg-white border border-gray-200 text-darkGray py-2.5 px-4 rounded-lg font-medium hover:bg-gray-50 transition-colors'>
-                        <span className='hidden sm:inline text-base'>Discard</span>
-                    </button>
-                    <button className='flex items-center gap-2 bg-white border border-gray-200 text-darkGray py-2.5 px-4 rounded-lg font-medium hover:bg-gray-50 transition-colors'>
-                        <span className='hidden sm:inline text-base'>Save Draft</span>
-                    </button>
-                    <button className='flex items-center justify-center gap-2 bg-primary text-white py-2.5 px-4 rounded-lg font-medium hover:opacity-90 transition-all sm:w-auto w-10 h-10 sm:h-auto'>
-                        <span className='hidden sm:inline text-base'>{btnName}</span>
-                    </button>
+                <div className="flex items-center gap-3">
+                    {btnName === "Delete Investor" ? (
+                        <button className="flex items-center gap-2 bg-white border border-gray-200 text-red-500 py-2.5 px-4 rounded-lg font-medium hover:bg-gray-50 transition-colors">
+                            <AiOutlineDelete className = "w-5 h-5"/>
+                            <span className=" inline text-base"> {btnName}</span>
+                        </button>
+                    ) : (
+                        <>
+                            <button className="flex items-center gap-2 bg-white border border-gray-200 text-darkGray py-2.5 px-4 rounded-lg font-medium hover:bg-gray-50 transition-colors">
+                                <span className=" inline text-base">Discard</span>
+                            </button>
+
+                            <button className="flex items-center gap-2 bg-white border border-gray-200 text-darkGray py-2.5 px-4 rounded-lg font-medium hover:bg-gray-50 transition-colors">
+                                <span className="inline text-base">Save Draft</span>
+                            </button>
+
+                            <button className="flex items-center justify-center gap-2 bg-primary text-white py-2.5 px-4 rounded-lg font-medium hover:opacity-90 transition-all sm:w-auto w-10 h-10 sm:h-auto">
+                                <span className="inline text-base">{btnName}</span>
+                            </button>
+                        </>
+                    )}
                 </div>
-            </div>
-        </section>
+
+            </div >
+        </section >
     );
 };
 

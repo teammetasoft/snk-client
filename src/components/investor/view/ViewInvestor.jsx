@@ -14,19 +14,20 @@ function ViewInvestor() {
             <BreadcrumbsHeader
                 title="Investor Details"
                 desc="Complete overview of investor details and activities."
-                btnName="Edit Investor"
+                btnName="Delete Investor"
                 // handleAddButton={handleAddButton}
+                // deleteBtn="Delete Investor"
                 parentLink="investor-list"
                 parentName="Investor "
                 childName="Investor Profile"
             />
             <div className="px-5 w-full flex flex-col md:flex-row gap-5 overflow-hidden">
-                <div className="bg-blue-600 md:w-3/5">
+                <div className=" md:w-3/5 space-y-5">
                     < InvestorInfo />
-                    < Nominee />
                     < PlanInvested />
+                    < Nominee />
                 </div>
-                <div className="bg-red-600  flex-1">
+                <div className="  flex-1">
                     < TransactionRecords />
                 </div>
             </div>

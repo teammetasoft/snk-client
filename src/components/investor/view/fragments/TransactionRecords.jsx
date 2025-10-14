@@ -57,16 +57,16 @@ export default function TransactionRecords() {
   ]);
 
   return (
-    <div className="min-h-screen bg-gray-50 p-4">
-      <div className="max-w-md mx-auto  rounded-lg ">
+    <div className="min-h-screen bg-gray-50  rounded-lg border border-gray-200 p-4 md:p-6">
+      <div className=" ">
         {/* Header */}
-        <div className="p-4 ">
+        <div className=" ">
           <div className="flex justify-between mb-4 items-start">
             <h1 className="text-darkGray text-xl  font-semibold ">
               Transactions
             </h1>
             <div className="flex items-center gap-2 ">
-              <label>Sort:</label>
+              <span>Sort:</span>
               <Select
                 value={selectedFilter}
                 onChange={setSelectedFilter}
@@ -107,7 +107,7 @@ export default function TransactionRecords() {
             <div key={transaction.id} className="p-4 flex items-start gap-3">
               {/* UPI Badge */}
               <div className="flex-shrink-0 mt-1">
-                <div className="bg-blue-100 text-primary text-xs font-semibold px-2 py-1 rounded">
+                <div className="bg-gray-100 text-primary text-xs font-semibold p-4 rounded-full">
                   {transaction.type}
                 </div>
               </div>
@@ -115,18 +115,21 @@ export default function TransactionRecords() {
               {/* Transaction Details */}
               <div className="flex-1 min-w-0">
                 <div className="flex justify-between items-start mb-1">
-                  <div className="text-darkGray font-semibold text-base">
-                    ₹{transaction.amount.toLocaleString()}
+                  <div className="flex flex-col md:flex-row gap-2">
+                    <div className="text-darkGray font-semibold text-base">
+                      ₹{transaction.amount.toLocaleString()}
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-xs px-2 py-0.5 bg-green-100 text-green-700 rounded-full">
+                        {transaction.status}
+                      </span>
+                    </div>
                   </div>
                   <div className="text-lightGray text-xs">
                     {transaction.date}
                   </div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-xs px-2 py-0.5 bg-green-100 text-green-700 rounded-full">
-                    {transaction.status}
-                  </span>
-                </div>
+
                 <div className="text-lightGray text-xs mt-1 uppercase">
                   {transaction.plan}
                 </div>
