@@ -16,6 +16,7 @@ import ResetPasswordPage from "./pages/auth/ResetPasswordPage";
 import OtpValidatePage from "./pages/auth/OtpValidatePage";
 import ForgetPasswordPage from "./pages/auth/ForgetPasswordPage";
 import SettingsPage from "./pages/SettingsPage"
+import NotificationPage from "./pages/NotificationPage"
 import ContactPage from "./pages/ContactPage"
  
 
@@ -63,6 +64,8 @@ function App() {
             />
             <Route path="/transaction-list" element={<TransactionList />} />
             <Route path="/settings" element={<SettingsPage />} />
+            <Route path="/notification" element={<NotificationPage />} />
+
 
           </Route>
         </Routes>
