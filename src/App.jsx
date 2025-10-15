@@ -7,6 +7,8 @@ import InvestorListPage from "./pages/investor/InvestorListPage";
 import CreateProductPage from "./pages/product/CreateProductPage";
 import ProductListPage from "./pages/product/ProductListPage";
 import SchemeListPage from "./pages/schemes/SchemeListPage";
+import ViewSchemePage from "./pages/schemes/ViewSchemePage";
+
 import CreateSchemesPage from "./pages/schemes/CreateSchemesPage";
 import CreateTransactionPage from "./pages/transaction/CreateTransactionPage";
 import TransactionList from "./pages/transaction/TransactionListPage";
@@ -50,6 +52,8 @@ function App() {
             <Route path="/product-list" element={<ProductListPage />} />
             <Route path="/scheme-create" element={<CreateSchemesPage />} />
             <Route path="/scheme-list" element={<SchemeListPage />} />
+            <Route path="/scheme" element={<ViewSchemePage />} />
+
             <Route
               path="/transaction-create"
               element={<CreateTransactionPage />}

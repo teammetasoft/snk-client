@@ -29,7 +29,7 @@ function SchemeList() {
     setCurrentPage(page);
     setPageSize(size);
   };
-  const handleTabChange=(tab)=>{
+  const handleTabChange = (tab) => {
     setActiveTab(tab);
     setCurrentPage(1);
   }
